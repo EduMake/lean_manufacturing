@@ -111,14 +111,18 @@ Will go NoSQL / document based
 * document per Run
 
 ##Software design
-* Node.js
-* Express
-* Socket.io
-* handlebars less complex than angluar
+* Node.js https://nodejs.org/
+* Express http://expressjs.com
+* Socket.io  http://socket.io
+* handlebars (less complex than angularjs ) http://handlebarsjs.com/
 * nosqlite or mongo
-
-Socket.io
-
+* Will be built with full unit testing (cos it is good practice and we can show the kids ) using
+  * Mocha.js http://mochajs.org/
+  * Should.js https://github.com/shouldjs/should.js
+  * Testing-Socket.IO https://github.com/liamks/Testing-Socket.IO
+  * http://www.designsuperbuild.com/blog/unit_testing_controllers_in_express/
+  * www.designsuperbuild.com/blog/unit_testing_controllers_in_express/
+  
 
 ## To Think About
     Statistical Process Control

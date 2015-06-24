@@ -121,7 +121,7 @@ Will go NoSQL / document based
   * Should.js https://github.com/shouldjs/should.js
   * Testing-Socket.IO https://github.com/liamks/Testing-Socket.IO
   * http://www.designsuperbuild.com/blog/unit_testing_controllers_in_express/
-  * www.designsuperbuild.com/blog/unit_testing_controllers_in_express/
+  * http://liamkaufman.com/blog/2012/01/28/testing-socketio-with-mocha-should-and-socketio-client/
   
 
 ## To Think About

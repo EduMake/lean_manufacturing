@@ -3,10 +3,10 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script>
-  var socket = io.connect('/');
-  //var socket = io.connect('/my-namespace');
-  socket.on('news', function (data) {
+  var socket = io.connect('/lean-game');
+  socket.on('Available Roles', function (data) {
     console.log(data);
+    
     socket.emit('my other event', { my: 'data' });
   });
 </script>

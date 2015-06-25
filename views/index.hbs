@@ -1,0 +1,12 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('/');
+  //var socket = io.connect('/my-namespace');
+  socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+</script>

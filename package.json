@@ -2,8 +2,12 @@
   "name": "lean_manufacturing",
   "version": "0.0.0",
   "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
+  "directories": {
+    "test": "test"
+    },
+    "scripts": {
+    "start": "node ./bin/www",
+    "test": "mocha -R spec"
   },
   "dependencies": {
     "body-parser": "~1.12.4",

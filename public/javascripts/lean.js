@@ -8,7 +8,8 @@ var defaultAction = function (data) {
   //console.log(data);
   $("#message").text(data.message);
   renderButtons(data.buttons);
-  //show forms
+  //socket.emit('my other event', { my: 'data' });
+  //
 };
 
 socket.on('Available Roles', defaultAction);

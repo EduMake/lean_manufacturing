@@ -6,3 +6,69 @@ body {
 a {
   color: #00B7FF;
 }
+
+.green{background-color: lightgreen;}
+
+.red{background-color: red;}
+
+header{min-width:100%;}
+section{clear: both;
+  padding: 10px;
+}
+
+h2 {
+    clear: both;
+}
+
+#logo {
+    float: left;
+    height: 85px;
+    max-width: 52.06%;
+    position: relative;
+    width: 260px;
+}
+#logo span {
+    left: -9999px;
+    position: absolute;
+    top: -9999px;
+}
+#logo a#logopng {
+    background: rgba(0, 0, 0, 0) url("../images/utc_trans.png") no-repeat scroll left center;
+    display: block;
+    height: 85px;
+    left: -4px;
+    position: absolute;
+    top: 0;
+    width: 204px;
+    z-index: 500 !important;
+}
+#logo #primary {
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 45px;
+    width: 200px;
+    z-index: 100;
+    
+    
+    background: #00af9d none repeat scroll 0 0 !important;
+    color: #ffffff !important;
+    
+}
+
+#logo #secondary {
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 65px;
+    width: 200px;
+    z-index: 100;
+    
+    background: #77b800 none repeat scroll 0 0 !important;
+    color: #ffffff !important;
+}
+
+h1 {
+  max-width: 46%;
+  float:left;
+}

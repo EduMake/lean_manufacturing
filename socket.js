@@ -1,7 +1,41 @@
 module.exports = function(io) {
   
   var oLean = {
+    
     aLines:[],
+    refresh: function(){
+      //if still looking for vicitims
+      if(this.aLines.length === 0) {
+        return { 
+          emit: 'Available Roles',
+          resp:this.respAvailableRoles()
+        };  
+      }
+    },
+    respAvailableRoles: function(){
+      var aResp = {
+            message: "Select Role for this device",
+            buttons: []
+      };
+      
+      if(this.aLines.length === 0) {
+        aResp.buttons.push({
+          label:  "Line 1 : Manager",
+          display:"green",
+          emit:   "Become Manager",
+          emit_data: {
+            line: 0
+          }
+        });
+      } else {
+        
+      
+      }
+      return aResp;
+    }
+      
+            
+    /*,
     getAvailableRoles: function(){
       if(this.aLines.length === 0) {
         return [
@@ -15,27 +49,19 @@ module.exports = function(io) {
       } else {
           return [];
       }
-    }
-  }
+    }*/
+  };
   
   io.on('connection', function (socket) {
-    console.log("general contection not interested");
- 
-  
     var oLeanSocket = io.of('/lean-game');
     oLeanSocket.on('connection', function(socket){
-      console.log('someone connected');
-      socket.emit('Available Roles', {roles:oLean.getAvailableRoles()});
+      socket.emit('Available Roles', oLean.respAvailableRoles());
       
-      socket.on('Get Available Roles', function (data) {
+      socket.on('Refresh', function (data) {
         console.log(data);
-        socket.emit('Available Roles', {roles:oLean.getAvailableRoles()});
+        var oRefreshAction = oLean.Refresh();
+        socket.emit(oRefreshAction.emit, oRefreshAction.resp);
       });
-      
-      
-      
-      
     });
   });
-  
 };

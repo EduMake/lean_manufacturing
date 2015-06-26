@@ -12,7 +12,6 @@ describe("Lean Server", function(){
     it('Should send list of available roles on connection - 1st connection "Line 1 : Manager"',function(done){
         var client = io.connect(socketURL, options);
         client.on('connect',function(data){
-            //client.emit('Get Available Roles');
         });
         
         client.on('Available Roles',function(oRoles){
@@ -20,17 +19,20 @@ describe("Lean Server", function(){
             //console.log("aRoles =", aRoles);
             oRoles.should.be.type('object');
             var oExpected = {
-                roles:[
+                message: "Select Role for this device",
+                buttons:[
                     {
-                        label:"Line 1 : Manager",
-                        line:1,
-                        role:"Manager",
-                        cellid:0
+                        label:  "Line 1 : Manager",
+                        display:"green",
+                        emit:   "Become Manager",
+                        emit_data: {
+                          line: 0
+                        }
                     }
                 ]
             };
-            console.log("oRoles    =", oRoles);
-            console.log("oExpected =", oExpected);
+            //console.log("oRoles    =", oRoles);
+            //console.log("oExpected =", oExpected);
             oRoles.should.eql(oExpected);
             
             /* If this client doesn't disconnect it will interfere with the next test */
@@ -38,6 +40,12 @@ describe("Lean Server", function(){
             done();
         });
     });
+    
+    // TEST : join as line 1 manager it should broacst to others back 4 cell, 1 qa button and "manage line 2" and send show line form 
+    
+    // TEST : join as cell
+    
+    
 });
 
 

@@ -23,9 +23,7 @@ module.exports = function(io) {
           label:  "Line 1 : Manager",
           display:"green",
           emit:   "Become Manager",
-          emit_data: {
-            line: 0
-          }
+          emit_data: JSON.stringify({line: 0})
         });
       } else {
         
@@ -62,6 +60,11 @@ module.exports = function(io) {
         var oRefreshAction = oLean.Refresh();
         socket.emit(oRefreshAction.emit, oRefreshAction.resp);
       });
+      
+      socket.on('Become Manager', function (data) {
+        console.log("Become Manager", data);
+      });
+      
     });
   });
 };

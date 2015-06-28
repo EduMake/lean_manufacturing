@@ -25,9 +25,7 @@ describe("Lean Server", function(){
                         label:  "Line 1 : Manager",
                         display:"green",
                         emit:   "Become Manager",
-                        emit_data: {
-                          line: 0
-                        }
+                        emit_data: JSON.stringify({line: 0})
                     }
                 ]
             };

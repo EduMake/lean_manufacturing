@@ -1,10 +1,22 @@
 <section>
   <h2 id="message">Loading....</h2>
 
-  <div id="buttons"></div>
+  <div id="buttons">
+  
+  </div>
 </section>
 
+
+
+<script id="buttons-template" type="text/x-handlebars-template">
+  \{{#each buttons}}
+  <button class="\{{display}}" data-emit="\{{emit}}" data-emit_data="\{{emit_data}}"><div><span>\{{label}}</span></div></button>
+  \{{/each}}
+</script>
+
 <script src="/socket.io/socket.io.js"></script>
-<script src="/javascripts/handlebars-v1.3.0.js"></script>
 <script src="/javascripts/jquery-1.11.0.min.js"></script>
+<script src="/javascripts/handlebars-v1.3.0.js"></script>
+<script src="/javascripts/jquery-bigtext.js"></script>
 <script src="/javascripts/lean.js"></script>
+

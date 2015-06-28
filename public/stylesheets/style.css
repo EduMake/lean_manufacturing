@@ -68,6 +68,16 @@ h2 {
     color: #ffffff !important;
 }
 
+
+button { 
+  width :45%;
+}
+
+button div {
+  display: inline-block;
+  width:100%;
+  padding: 5% 0px;}
+
 h1 {
   max-width: 46%;
   float:left;
